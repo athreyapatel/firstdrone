@@ -1,0 +1,28 @@
+kind: pipeline
+type: ssh
+name: default
+server:
+  host:
+    from_secret: host
+  user:
+    from_secret: ssh_username
+  password:
+    from_secret: ssh_key
+
+steps:
+
+- name: build
+  image: golang:1.13
+  commands:
+    - "go build -o ./myapp"
+
+- name: publish  
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    repo: patelathreya/myrepo
+    auto_tag: true
+    auto_tag_suffix: drone-build
