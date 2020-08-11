@@ -3,11 +3,11 @@ type: ssh
 name: default
 server:
   host:
-    from_secret: host
+    from_secret: ssh_host
   user:
     from_secret: ssh_username
   password:
-    from_secret: ssh_key
+    from_secret: ssh_pwd
 
 steps:
 
