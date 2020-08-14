@@ -13,7 +13,7 @@ steps:
     url: http://34.68.63.147:8080
     user: admin
     token: 115d276a34f5b2e9323928a1c514f7c5bb
-    job: Another
+    job: ArtifactoryIntegrationMaven
 - name: publish  
   image: plugins/docker
   settings:
