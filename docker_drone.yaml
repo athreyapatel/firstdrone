@@ -7,7 +7,13 @@ steps:
   image: golang:1.13
   commands:
     - "go build -o ./myapp"
-
+- name: trigger jenkins job
+  image: appleboy/drone-jenkins
+  settings:
+    url: http://34.68.63.147:8080
+    user: admin
+    token: 115d276a34f5b2e9323928a1c514f7c5bb
+    job: Another
 - name: publish  
   image: plugins/docker
   settings:
@@ -18,3 +24,4 @@ steps:
     repo: patelathreya/myrepo
     auto_tag: true
     auto_tag_suffix: drone-build
+
