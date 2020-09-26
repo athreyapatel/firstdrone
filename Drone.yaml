@@ -12,6 +12,7 @@ steps:
   commands:
     - "go build -o ./myapp"
 
+    
 - name: publish  
   image: plugins/docker
   settings:
