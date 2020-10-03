@@ -11,10 +11,11 @@ steps:
 - name: trigger jenkins job
   image: appleboy/drone-jenkins
   settings:
-    url: http://34.68.63.147:8080
+    url: http://34.66.214.246:8080
     user: admin
-    token: 115d276a34f5b2e9323928a1c514f7c5bb
-    job: job/CoberturaIntegration
+    token:
+      from_secret: jenkins_token
+    job: CoberturaIntegration
 - name: publish  
   image: plugins/docker
   settings:
